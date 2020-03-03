@@ -38,6 +38,11 @@ print(" " in data)
 print("bishal" in data)
 """
 git  tutorial in videos
-1) after creating account: 
+1) after creating account: use these code to update in git:
+git init
+git add README.md
+git commit -m "first commit"
+git remote add origin https://github.com/bishalpokharel325/a.git
+git push -u origin master
 
 """
