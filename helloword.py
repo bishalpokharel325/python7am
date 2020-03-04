@@ -9,7 +9,7 @@ boolean=True or False
 list
 truple
 set
-dictionarykkkkkkkkkkkk
+dictionary
 """
 print(type(age))
 """
