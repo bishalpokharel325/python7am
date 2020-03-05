@@ -69,3 +69,6 @@ print(dir(x))
 # print(name[0:2])
 # users=["Ram",123,["Ra"]]
 # print(users[2][0])
+
+
+

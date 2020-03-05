@@ -20,4 +20,4 @@ git and github
 4)
 
 """
-
+print(dir(age))
