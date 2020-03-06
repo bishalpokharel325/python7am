@@ -49,7 +49,7 @@ if location=="ktm" or location=="bkt" or location=="ltp":
     print("----------------------------------------------------------------------------")
     print(f"1      Dell              {dell}          50000           {dell*50000}     ")
     print(f"2      Mac               {mac}          150000          {mac*150000}      ")
-    print(f"3      Tosiba            {tosiba}          65000           {tosiba * 65000}      ")
+    print(f"3      Tosiba            {tosiba}         65000          {tosiba * 65000}      ")
     print("--------------------------------------------------------------------------")
     print(f"                        Sub-Total:                 Rs.{subtotal}")
     print(f"                        packaging fees:            Rs.{packcost}")
@@ -61,5 +61,3 @@ if location=="ktm" or location=="bkt" or location=="ltp":
     print("-------------------------------------------------------------------------")
 else:
     print("Sorry, Our service is limited only in kathmandu valley.")
-
-
