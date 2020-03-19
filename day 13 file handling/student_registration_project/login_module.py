@@ -1,42 +1,59 @@
-import csv
+from register_module import register
+from login_module import login
 from csvtolistconverter import csvtolistconverter
-def login():
-    open("record.csv","r+")
-    data=csvtolistconverter("record.csv")
-    user_name=input("Enter User Name:")
-    password=input("Enter password:")
-    i=0
-    checker_username=0
-    checker_uandp=0
-    return_id=-1
-    while i<len(data):
-        if user_name==data[i][1]:
-            print("User name exist.")
-            if(password==data[i][2]):
-                print("Login Sucessful")
-                print(f"Welcome {data[i][1]}")
-                return_id=i+1
-            else:
-               checker_uandp=checker_uandp+1
-        else:
-            checker_username=checker_username+1
-        i=i+1
-    if return_id!=-1:
-        data=csvtolistconverter("record.csv")
-        print("your Profile Details:")
-        print("------------------------------------------")
-        print(f"Your Registration id is:{return_id}")
-        print("------------------------------------------")
-        print(f"Your User name is:{data[return_id - 1][1]}")
-        print("------------------------------------------")
-        print(f"Your Password is:{data[return_id - 1][2]}")
-        print("------------------------------------------")
-        print(f"Your email is:{data[return_id - 1][3]}")
-        print("------------------------------------------")
-        print(f"Your phone no is:{data[return_id - 1][4]}")
-        print("------------------------------------------")
+import os
+"""Check for record.csv and if this file do not exist then it will make a new one"""
+if not os.path.exists("record.csv"):
+    check_file=open("record.csv","w")
+    check_file.close()
+"""Change records in csv into list :  data[indexno][data1,2 or 3]"""
+
+data=csvtolistconverter("record.csv")
+totalno=len(data)
+"""Input from user whether: they want to register or login"""
+print("WELCOME!!!!!!")
+print("Choose whether you want to register, login or exit:")
+print("Enter 1 to register \nEnter 2 to login \nEnter any other key to exit program")
+choose=input("your choice:")
+if choose=="1":
+    os.system('cls')
+    print("This is Registration Page:")
+    print("-----------------------------")
+    checker=0
+    user_name = input("Enter user name:")
+    while checker==0:
+        i = 0
+        while i < totalno:
+            if user_name == data[i][1]:
+                print("Username already exist.")
+                user_name = input("Please Enter new Username:")
+                i=0
+            checker=1
+            i = i + 1
+    user_password=input("Enter Password:")
+    user_repassword=input("Confirm Password:")
+    while(user_password!=user_repassword):
+        print("Password could not be confirmed:")
+        user_password = input("Enter Password:")
+        user_repassword = input("Confirm Password:")
+    user_email = input("Enter Email:")
+    user_phoneno = input("Enter Phone no:")
+    """check if username exist or not."""
+
+
+    if checker==0:
+        register(totalno+1,user_name,user_password,user_email,user_phoneno)
+    secondchoice=input("Do you want to login? (Y or N)")
+    if secondchoice=="Y" or secondchoice=="y":
+        login()
     else:
-        if(checker_username==0):
-            print("Could not find user name")
-        else:
-            print("Username exist but password does not match")
+        print("Username already exist. Please Enter new username.")
+if choose=="2":
+    login()
+
+
+
+
+
+
+
