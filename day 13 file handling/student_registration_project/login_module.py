@@ -39,15 +39,13 @@ if choose=="1":
     user_email = input("Enter Email:")
     user_phoneno = input("Enter Phone no:")
     """check if username exist or not."""
-
-
-    if checker==0:
-        register(totalno+1,user_name,user_password,user_email,user_phoneno)
+    register(totalno+1,user_name,user_password,user_email,user_phoneno)
+    print("Data stored into the database.")
     secondchoice=input("Do you want to login? (Y or N)")
     if secondchoice=="Y" or secondchoice=="y":
         login()
     else:
-        print("Username already exist. Please Enter new username.")
+        print("Program terminates....")
 if choose=="2":
     login()
 
