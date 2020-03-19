@@ -38,6 +38,7 @@ def login():
     else:
         if(checker_username==0):
             print("Could not find user name")
+            login()
         else:
             print("Username exist but password does not match")
             login()
