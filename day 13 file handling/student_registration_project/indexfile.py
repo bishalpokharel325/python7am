@@ -43,7 +43,6 @@ if choose=="1":
     user_phoneno = input("Enter Phone no:")
     """check if username exist or not."""
 
-
     if checker==0:
         register(totalno+1,user_name,user_password,user_email,user_phoneno)
     secondchoice=input("Do you want to login? (Y or N)")
